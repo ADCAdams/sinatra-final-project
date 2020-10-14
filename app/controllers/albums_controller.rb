@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
 
   # GET: /albums/new
   get "/albums/new" do
-    erb :"/albums/new.html"
+    erb :"albums/new.html"
   end
 
   # POST: /albums
