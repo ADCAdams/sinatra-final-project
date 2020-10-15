@@ -2,21 +2,29 @@ class UsersController < ApplicationController
 
   # GET: /users
   get "/users" do
+    @users = User.all
     erb :"/users/index.html"
+  end
+  get "/users/" do
+    redirect "/users"
   end
 
   # GET: /users/new
   get "/users/new" do
+    @user = User.new
+
     erb :"/users/new.html"
   end
 
   # POST: /users
   post "/users" do
-    redirect "/users"
+    @user = User.create(params)
+    redirect "/users/#{ @user.id }"
   end
 
   # GET: /users/5
   get "/users/:id" do
+    @user = User.find(params[:id])
     erb :"/users/show.html"
   end
 

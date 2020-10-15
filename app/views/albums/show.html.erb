@@ -1,1 +1,9 @@
 <h1>This is the show page for an individual instance of your model.</h1>
+  
+<h1><%= @album.name %></h1>
+<%= @album.genre %>
+
+<form method="post" action="/albums/<%= @album.id %>">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" />
+</form>

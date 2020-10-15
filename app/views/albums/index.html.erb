@@ -1,1 +1,11 @@
-<h1>This is the Model's index page.</h1>
+<h1>All The Albums!</h1>
+  
+<ul>
+<% @albums.each do |album| %>
+  <li>
+    <a href="/albums/<%= album.id %>">
+      <%= album.name %> 
+    </a>
+  </li>
+<% end %>
+</ul>
