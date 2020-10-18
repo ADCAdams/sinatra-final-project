@@ -12,12 +12,14 @@ class AlbumsController < ApplicationController
   # GET: /albums/new
   get "/albums/new" do
     @album = Album.new
+
     erb :"albums/new.html"
   end
 
   # POST: /albums
   post "/albums" do
-    @album = Album.create(params)
+    @album = Album.create(:name => params[:name], :user_id => session[:user_id], :genre => params[:genre])
+
     #binding.pry
     redirect "/albums/#{ @album.id }"
   end

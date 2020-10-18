@@ -25,6 +25,23 @@ class UsersController < ApplicationController
   # GET: /users/5
   get "/users/:id" do
     @user = User.find(params[:id])
+    #binding.pry
+    @album_array = []
+    if Album.find_by(:user_id => params[:id]) == nil
+      @album_array = []
+    else 
+      Album.find_each do |album|
+        @album_array << album if album.user_id == @user.id
+      end
+    end     #ends if
+
+    # Albums.all.each do |album|
+    #   if album.user_id == @user.id 
+    #     @album_array << album 
+    #   end
+
+    # end
+
     erb :"/users/show.html"
   end
 

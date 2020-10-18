@@ -1,8 +1,22 @@
-<h1>Hi, User!</h1>
+<h1>User: <%= @user.username %></h1>
   
-<h1><%= @user.name %></h1>
+<h2><%= @user.username%>'s Albums: </h2>
+<ul>
+<% @album_array.each do |album| %>
+  <li>
+    <a href="/albums/<%= album.id %>">
+      <%= album.name %> 
+    </a>
+  </li>
+<% end %>
+</ul>
+<br>
+<br>
+<br>
+<div> Also, you can <a href="/albums/new">create a new album! </a> </div>
 
-<form method="post" action="/users/<%= @user.id %>">
-  <input type="hidden" name="_method" value="delete" />
-  <input type="submit" value="Delete"/>
-</form>
+<br>
+<br>
+<a href="/logout"> Log out user </a>
+
+  
