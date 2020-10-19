@@ -1,4 +1,21 @@
-<h1><%= @album.name %></h1>
-<%= @album.genre %>
+<h1>Album: <%= @album.name %></h1>
+Genre: <%= @album.genre %>
 
-<a href="/users"> Users </a>
+<br>
+<br>
+
+<ul>
+<% if @album.user_id == session[:user_id] %>
+  <li>
+    <a href="/albums/<%= @album.id %>/edit">
+      Edit this album
+    </a>
+  </li>
+<% end %>
+</ul>
+<br>
+
+<a href=<%="/users/#{session[:user_id]}"%>>Back to your profile</a>
+<br>
+<br>
+<a href="/users"> All Users </a>

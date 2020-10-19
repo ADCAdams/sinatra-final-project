@@ -1,16 +1,22 @@
-<h1>Insert the 1form to edit an instance of your model here.</h1>
-<form action="/albums/<%= @album.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <ul>
-    <li>
-      <label for="title">Title</label>
-      <input id="title" type="text" name="album[title]" value="<%= @album.title %>" />
-    </li>
-    <li>
-      <label for="content">Content</label>
-      <textarea id="content" type="text" name="album[content]"  value="<%= @album.content %>">
-      </textarea>
-    </li>
-  </ul>
-  <input type="submit" />
-</form>
+<h1>Editing Album: <%=@album.name%>.</h1>
+
+<li>
+  <% if @error %>
+    <li> <%= @error %> </li>
+  <% else %>
+    <form action="/albums/<%= @album.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <ul>
+        <li>
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" value="<%= @album.name %>" />
+        </li>
+        <li>
+          <label for="genre">Genre</label>
+          <input id="genre" type="text" name="genre"  value="<%= @album.genre %>"/>
+        </li>
+      </ul>
+      <input type="submit" value="Edit" />
+    </form>
+  <% end %>
+</li>

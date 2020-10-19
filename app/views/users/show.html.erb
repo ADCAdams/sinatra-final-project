@@ -1,6 +1,9 @@
 <h1>User: <%= @user.username %></h1>
   
 <h2><%= @user.username%>'s Albums: </h2>
+<% if @album_array == [] %>
+  <h3> You don't have any albums yet! Make one! </h3>
+<% end %>
 <ul>
 <% @album_array.each do |album| %>
   <li>
@@ -13,10 +16,15 @@
 <br>
 <br>
 <br>
-<div> Also, you can <a href="/albums/new">create a new album! </a> </div>
-
+<div> Click here to <a href="/albums/new">create a new album! </a> </div>
 <br>
 <br>
-<a href="/logout"> Log out user </a>
+<a href="/albums"> All Albums </a>
+<br>
+<br>
+<a href="/users"> All Users </a>
+<br>
+<br>
+<a href="/logout"> User Logout </a>
 
   

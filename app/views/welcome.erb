@@ -2,9 +2,20 @@
 
 <br>
 
+
+
+<% if session[:user_id] %>
+  <h3> **Groovy!** You're already signed in, <a href=<%="/users/#{session[:user_id]}"%>> click here </a>to go back to your profile!  </h3>
+<% end %>
+
 <h3> Sign up or sign in! </h3>
 
 New users:<a href="/signup"> sign up </a>
 <br>
 
 Existing users: <a href="/login"> sign in </a>
+
+
+<br>
+<br>
+<a href="/logout"> User Logout </a>

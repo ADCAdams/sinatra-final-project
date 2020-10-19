@@ -11,9 +11,7 @@ class UsersController < ApplicationController
 
   # GET: /users/new
   get "/users/new" do
-    @user = User.new
-
-    erb :"/users/new.html"
+    redirect "/"
   end
 
   # POST: /users
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
   # GET: /users/5
   get "/users/:id" do
     @user = User.find(params[:id])
-    #binding.pry
+
     @album_array = []
     if Album.find_by(:user_id => params[:id]) == nil
       @album_array = []
