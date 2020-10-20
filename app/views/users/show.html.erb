@@ -2,7 +2,7 @@
   
 <h2><%= @user.username%>'s Albums: </h2>
 <% if @album_array == [] %>
-  <h3> You don't have any albums yet! Make one! </h3>
+  <h3> No albums yet! Make one! </h3>
 <% end %>
 <ul>
 <% @album_array.each do |album| %>
