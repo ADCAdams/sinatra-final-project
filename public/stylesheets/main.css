@@ -30,7 +30,7 @@
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
     background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(8px) saturate(200%);
+    backdrop-filter: blur(10px) saturate(150%);
 
   }
 
