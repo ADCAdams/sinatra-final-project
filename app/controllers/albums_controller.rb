@@ -52,7 +52,7 @@ class AlbumsController < ApplicationController
   end
 
   # DELETE: /albums/5/delete
-  delete "/albums/:id/delete" do
+  delete "/albums/:id" do
     Album.destroy(params[:id])
     redirect "/albums"
   end

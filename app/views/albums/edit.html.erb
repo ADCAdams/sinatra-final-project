@@ -18,5 +18,9 @@
       </ul>
       <input type="submit" value="Edit" />
     </form>
+    <form action="/albums/<%= @album.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this Album">
+    </form>
   <% end %>
 </li>

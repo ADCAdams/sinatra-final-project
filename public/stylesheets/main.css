@@ -9,11 +9,13 @@
   html, body {
     height: 100%;
     width: 100%;
+
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background-image: url(imgvoz.com/uploads/eZpbcnA/albums.jpg);
+    background-image: url("https://imgvoz.com/uploads/eZpbcnA/albums.jpg");
+    background-repeat: repeat;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -27,6 +29,9 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px) saturate(200%);
+
   }
 
   h1 {
