@@ -34,10 +34,8 @@ class AlbumsController < ApplicationController
   get "/albums/:id/edit" do
     @album = Album.find(params[:id])
     if @album.user_id == session[:user_id]
-      
     else
       @error = "You can't view that!"
-      
     end
     erb :"/albums/edit.html"
 

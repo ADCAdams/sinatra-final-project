@@ -25,6 +25,18 @@
 <a href="/users"> All Users </a>
 <br>
 <br>
+<div>
+<% if @user.id == session[:user_id] %>
+  <li>
+    <a href="/users/<%= @user.id %>/edit">
+      Edit your profile!
+    </a>
+  </li>
+<% end %>
+</div>
+<br>
+<br>
+
 <a href="/logout"> User Logout </a>
 
   

@@ -45,16 +45,23 @@ class UsersController < ApplicationController
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
+    @current = current_user
+
+    @error = "You can't view that!" if @current.id != session[:user_id]
+    
     erb :"/users/edit.html"
   end
 
   # PATCH: /users/5
   patch "/users/:id" do
-    redirect "/users/:id"
-  end
+    @user = User.find(params[:id])
+    @user.update(:username => params[:username])
+    redirect "/users/#{@user.id}"
+  end 
 
   # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
+  delete "/users/:id" do
+    User.destroy(params[:id])
+    redirect "/logout"
   end
 end
