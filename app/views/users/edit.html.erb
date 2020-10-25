@@ -1,4 +1,8 @@
-<h1>Editing User: <%=@current.username%>.</h1>
+
+<% if !@error %>
+  <h1>Editing User: <%=@current.username%>.</h1>
+<% end %>
+
 
 <li>
   <% if @error %>

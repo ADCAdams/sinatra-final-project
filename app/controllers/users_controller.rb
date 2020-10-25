@@ -45,10 +45,15 @@ class UsersController < ApplicationController
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
-    @current = current_user
+    if logged_in?
+      @current = current_user 
+    else
+      @error = "You can't view that!"
+    end
 
-    @error = "You can't view that!" if @current.id != session[:user_id]
-    
+    if @current 
+      @error = "You can't view that!" if @current.id != session[:user_id]
+    end
     erb :"/users/edit.html"
   end
 
