@@ -1,7 +1,7 @@
 <h1>User: <%= @user.username %></h1>
   
 <h2><%= @user.username%>'s Albums: </h2>
-<% if @album_array == [] %>
+<% if @album_array.empty? %>
   <h3> No albums yet! Make one! </h3>
 <% end %>
 <ul>
