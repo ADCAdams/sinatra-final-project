@@ -1,10 +1,9 @@
 # ruby Sinatra Albums
 
-Welcome to this Ruby Album/User database project! Here you can create/edit your own profile and create/edit your own albums! You can even view other users and their albums.
+Welcome to this Ruby Album/User database project! This is THE social hub for artists, music lovers, and all their friends. 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Sinatra-Final-Project`. To experiment with that code, run `bin/console` for an interactive prompt.
+Here you can create/edit your own profile and create/edit your own albums! You can even view other users and their albums.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,9 +21,13 @@ Or install it yourself as:
 
     $ gem install Sinatra-Final-Project
 
+Migrate, shotgun add
+
 ## Usage
 
-TODO: Write usage instructions here
+This gem makes use of shotgun to run at http://localhost:9393/ in your local browser. Once shotgun is running, navigate to http://localhost:9393/ and sign up as a new user.
+
+From there, the world is yours! You can create any album you want! In your profile you can edit your username, as well as view/edit any albums you create.
 
 ## Development
 

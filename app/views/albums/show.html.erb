@@ -7,7 +7,7 @@ Genre: <%= @album.genre %>
 <ul>
 <% if @album.user_id == session[:user_id] %>
   <li>
-    <a href="/albums/<%= @album.id %>/edit">
+    <a href="/albums/<%= @album.id %>/edit/">
       Edit this album
     </a>
   </li>

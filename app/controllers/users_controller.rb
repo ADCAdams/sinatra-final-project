@@ -46,13 +46,24 @@ class UsersController < ApplicationController
   # PATCH: /users/5
   patch "/users/:id" do
     @user = User.find(params[:id])
-    @user.update(:username => params[:username])
-    redirect "/users/#{@user.id}"
+    if logged_in? && @user == current_user
+      @user.update(:username => params[:username])
+      redirect "/users/#{@user.id}"
+    else
+      redirect "/users/#{@user.id}"
+    end
   end 
 
   # DELETE: /users/5/delete
   delete "/users/:id" do
-    User.destroy(params[:id])
-    redirect "/logout"
+    @user = User.find(params[:id])
+    if logged_in? && @user == current_user
+      User.destroy(params[:id])
+      redirect "/logout"
+    else
+      redirect "/users/#{@user.id}"
+    end
   end
+
+  
 end

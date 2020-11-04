@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
   end
 
   # GET: /albums/5/edit
-  get "/albums/:id/edit" do
+  get "/albums/:id/edit/" do
     @album = Album.find(params[:id])
     if @album.user_id == session[:user_id]
     else
@@ -43,15 +43,20 @@ class AlbumsController < ApplicationController
 
   # PATCH: /albums/5
   patch "/albums/:id" do
-    
     @album = Album.find(params[:id])
-    @album.update(:name => params[:name], :genre => params[:genre])
-    redirect "/albums/#{@album.id}"
+    if logged_in? && @album.user_id == session[:user_id]
+      @album.update(:name => params[:name], :genre => params[:genre])
+      redirect "/albums/#{@album.id}"
+    end
+
   end
 
   # DELETE: /albums/5/delete
   delete "/albums/:id" do
-    Album.destroy(params[:id])
-    redirect "/albums"
+    @album = Album.find(params[:id])
+    if logged_in? && @album.user_id == session[:user_id]
+      Album.destroy(params[:id])
+      redirect "/albums"
+    end
   end
 end
